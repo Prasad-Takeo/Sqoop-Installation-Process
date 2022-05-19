@@ -1,0 +1,35 @@
+Sqoop Installation
+The prerequisite for Sqoop installation are Java and Hadoop. These two must be preinstalled in the system.
+
+Download the latest version of Sqoop from internet. 
+The following commands are used to extract the Sqoop tar ball and move it to "/usr/lib/sqoop" directory.
+
+$tar -xvf sqoop-1.4.4.bin__hadoop-2.0.4-alpha.tar.gz  
+$ su  
+password:  
+  
+# mv sqoop-1.4.4.bin__hadoop-2.0.4-alpha /usr/lib/sqoop  
+#exit  
+Configure .bashrc file using the below command
+
+#export SQOOP_HOME=/usr/lib/sqoop export PATH=$PATH:$SQOOP_HOME/bin  
+Copy the template file
+
+$ cd $SQOOP_HOME/conf  
+$ mv sqoop-env-template.sh sqoop-env.sh  
+Edit sqoop-env.sh file with the lines below
+
+export HADOOP_COMMON_HOME=/usr/local/hadoop   
+export HADOOP_MAPRED_HOME=/usr/local/hadoop  
+Download and set the mysql-connector-java using the commands below
+
+$ tar -zxf mysql-connector-java-5.1.30.tar.gz  
+$ su  
+password:  
+  
+# cd mysql-connector-java-5.1.30  
+# mv mysql-connector-java-5.1.30-bin.jar /usr/lib/sqoop/lib  
+Type the below command to verify Sqoop installation
+
+$ cd $SQOOP_HOME/bin  
+$ sqoop-version  
